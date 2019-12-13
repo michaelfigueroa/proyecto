@@ -1,0 +1,21 @@
+{% extends "Alumnos/base.html" %}
+{% load static %}
+{%block estilos%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/resultados.css' %}">
+{% endblock %}
+
+{% block titulo %}
+Resultados
+{% endblock %}
+
+{% block banner %}
+<h1>Hola estos son los resultados</h1>
+{% endblock %}
+
+{% block contenido %}
+
+{% for object in Alumnos%}
+<p>{{object.Nombre}}</p>
+{% endfor %}
+
+{% endblock %}
