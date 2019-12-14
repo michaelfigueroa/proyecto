@@ -9,13 +9,23 @@ Resultados
 {% endblock %}
 
 {% block banner %}
-<h1>Hola estos son los resultados</h1>
-{% endblock %}
+<h1><a href="/" style="margin-left:5px;color:white; text-decoration:none; float:left"><i class="fas fa-arrow-alt-circle-left"></i></a>Lista de Alumnos <a href="/admin" style="margin-right:5px;color:white; text-decoration:none; float:right"><i class="fas fa-users-cog"></i></a></h1>
+{% endblock%}
 
 {% block contenido %}
 
-{% for object in Alumnos%}
-<p>{{object.Nombre}}</p>
+{% for object in Alumnos %}
+<div class="info">
+  <p id="Maticula"> <br/>Matricula: {{object.Num_count}}</p>
+  <p id="Nombre">Nombre: {{object.Nombre}}</p>
+  <p id="Edad">Edad: {{object.Edad}}</p>
+  <p id="Sexo">Sexo: {{object.Sexo}}</p>
+  <p id="Fecha">Fecha de Nacimiento: {{object.FechaNacimiento}}</p>
+  <p id="Telefono">Telefono: {{object.Telefono}}</p>
+  <p id="Email">Email: {{object.Email}}</p>
+  <p id="Dir">Dirección: {{object.Domicilio}} <br/> <br/></p>
+
+</div>
 {% endfor %}
 
 {% endblock %}
