@@ -1,7 +1,8 @@
 from django.db import models
 
 class DatosPersonales(models.Model):
-    Num_count=models.CharField(max_length=100,primary_key=True)
+	#Num_count=models.CharField(max_length=100,primary_key=True)
+    Num_count=models.AutoField(primary_key=True)
     Nombre=models.CharField(max_length=20)
     Sexo=models.CharField(max_length=1)
     Edad=models.IntegerField()
@@ -14,4 +15,7 @@ class DatosPersonales(models.Model):
         self.save()
 
     def __str__(self):
-        return  self.Num_count+" : "+self.Nombre
+		return self.Nombre
+        #return  self.Num_count+" : "+self.Nombre
+		#return f'{self.Num_count} ({self.Nombre})'
+		#return '{0} ({1})'.format(self.Num_count,self.Nombre)
